@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/datepicker.min.css"/>
     <title> Форма
     </title>
   </head>
@@ -18,41 +18,38 @@
             <div class="order__form-row">
               <label class="order__form-block">
                 <div class="order__form-label lock">Фамилия ребенка</div>
-                <div class="order__form-sublabel">Пояснительный текст</div>
                 <input class="order__form-input" type="text" name="surname" placeholder="Ваш ответ" required="required"/>
               </label>
             </div>
             <div class="order__form-row">
               <label class="order__form-block">
                 <div class="order__form-label lock">Имя ребенка</div>
-                <div class="order__form-sublabel">Пояснительный текст</div>
                 <input class="order__form-input" type="text" name="name" placeholder="Ваш ответ" required="required"/>
               </label>
             </div>
             <div class="order__form-row">
               <label class="order__form-block">
                 <div class="order__form-label lock">Отчество ребенка</div>
-                <div class="order__form-sublabel">Пояснительный текст</div>
                 <input class="order__form-input" type="text" name="lastname" placeholder="Ваш ответ" required="required"/>
               </label>
             </div>
             <div class="order__form-row">
               <label class="order__form-block">
                 <div class="order__form-label lock">Дата рождения</div>
-                <div class="order__form-sublabel">Обязательно для заполнения</div>
-                <input class="order__form-input" type="date" name="birthday" placeholder="Ваш ответ" required="required"/>
+                <div class="order__form-sublabel">Введите дату рождения ребенка</div>
+                <input class="order__form-input" type="text" name="birthday" placeholder="Ваш ответ" required="required" id="datepick"/>
               </label>
             </div>
             <div class="order__form-row">
               <label class="order__form-block">
                 <div class="order__form-label lock">Контактный телефон</div>
-                <div class="order__form-sublabel">Телефон в формате 2ххх-ххх</div>
-                <input class="order__form-input" type="tel" name="tel" placeholder="Ваш ответ" required="required" pattern="2[0-9]{3}-[0-9]{3}"/>
+                <div class="order__form-sublabel">Введите ваш номер телефона</div>
+                <input class="order__form-input" type="text" name="tel" placeholder="+7(___)___-____" required="required" id="phone"/>
               </label>
             </div>
             <div class="order__form-row">
               <label class="order__form-block">
-                <div class="order__form-label">Выбрать ответы</div>
+                <div class="order__form-label">Статус ребенка</div>
                 <select class="order__form-input" name="group">
                   <option value="none">Выбрать...</option>
                   <option value="upperschool">Дошкольник (5-6 лет)</option>
@@ -69,5 +66,9 @@
         </form>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="js/datepicker.min.js"> </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
