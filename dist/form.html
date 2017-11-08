@@ -5,71 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1"/>
     <link rel="stylesheet" href="css/main.css"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
     <title> Форма
     </title>
   </head>
   <body>
-    <div class="wrapper">
-      <section class="section-form">
-        <div class="container-order">
-          <div class="section-title">Форма регистрации</div>
-          <form class="order" action="server.php" method="post" id="order-form">
-            <div class="order__form">           
-              <div class="order__form-row">
-                <label class="order__form-block">
-                  <div class="order__form-label lock">Фамилия ребенка</div>
-                  <div class="order__form-sublabel">Обязательно для заполнения</div>
-                  <input class="order__form-input" type="text" name="surname" placeholder="Ваш ответ" required="required"/>
-                </label>
-              </div>
-              <div class="order__form-row">
-                <label class="order__form-block">
-                  <div class="order__form-label lock">Имя ребенка</div>
-                  <div class="order__form-sublabel">Обязательно для заполнения</div>
-                  <input class="order__form-input" type="text" name="name" placeholder="Ваш ответ" required="required"/>
-                </label>
-              </div>
-              <div class="order__form-row">
-                <label class="order__form-block">
-                  <div class="order__form-label lock">Отчество ребенка</div>
-                  <div class="order__form-sublabel">Обязательно для заполнения</div>
-                  <input class="order__form-input" type="text" name="lastname" placeholder="Ваш ответ" required="required"/>
-                </label>
-              </div>
-              <div class="order__form-row">
-                <label class="order__form-block">
-                  <div class="order__form-label lock">Дата рождения</div>
-                  <div class="order__form-sublabel">Обязательно для заполнения</div>
-                  <input class="order__form-input" type="date" name="birthday" placeholder="Ваш ответ" required="required"/>
-                </label>
-              </div>
-              <div class="order__form-row">
-                <label class="order__form-block">
-                  <div class="order__form-label lock">Контактный телефон</div>
-                  <div class="order__form-sublabel">Телефон в формате 2ххх-ххх</div>
-                  <input class="order__form-input" type="tel" name="tel" placeholder="Ваш ответ" required="required" pattern="2[0-9]{3}-[0-9]{3}"/>
-                </label>
-              </div>
-              <div class="order__form-row">
-                <label class="order__form-block">
-                  <div class="order__form-label lock">Отчество ребенка</div>
-                  <div class="order__form-sublabel">Обязательно для заполнения</div>
-                  <select name="group">
-                    <option value="none"></option>
-                    <option value="upperschool">Дошкольник (5-6 лет)</option>
-                    <option value="school">Школьник (7-17 лет)     </option>
-                  </select>
-                </label>
-              </div>
-              <div class="order__form-row order__form-row_btn">
-                <div class="order__order-row_btn">
-                  <input class="order__form-button" type="submit" value="next"/>
-                </div>
+    <div class="wrapper">   
+      <div class="container-order">
+        <div class="section-title">Форма регистрации в секцию</div>
+        <form class="order" action="server.php" method="post" id="order-form">
+          <div class="order__form">           
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Фамилия ребенка</div>
+                <div class="order__form-sublabel">Пояснительный текст</div>
+                <input class="order__form-input" type="text" name="surname" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Имя ребенка</div>
+                <div class="order__form-sublabel">Пояснительный текст</div>
+                <input class="order__form-input" type="text" name="name" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Отчество ребенка</div>
+                <div class="order__form-sublabel">Пояснительный текст</div>
+                <input class="order__form-input" type="text" name="lastname" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Дата рождения</div>
+                <div class="order__form-sublabel">Обязательно для заполнения</div>
+                <input class="order__form-input" type="date" name="birthday" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Контактный телефон</div>
+                <div class="order__form-sublabel">Телефон в формате 2ххх-ххх</div>
+                <input class="order__form-input" type="tel" name="tel" placeholder="Ваш ответ" required="required" pattern="2[0-9]{3}-[0-9]{3}"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label">Выбрать ответы</div>
+                <select class="order__form-input" name="group">
+                  <option value="none">Выбрать...</option>
+                  <option value="upperschool">Дошкольник (5-6 лет)</option>
+                  <option value="school">Школьник (7-17 лет)     </option>
+                </select>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <div class="order__order-row_btn">
+                <input class="order__form-button" type="submit" value="Далее"/>
               </div>
             </div>
-          </form>
-        </div>
-      </section>
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>

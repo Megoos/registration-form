@@ -58,7 +58,7 @@ gulp.task('pug', () => {
 
 gulp.task('watch', () => {
   gulp.watch('src/**/*.pug', ['pug']);
-  gulp.watch('src/**/*.scss', ['sass']);
+  gulp.watch('src/**/**/*.scss', ['sass']);
 });
 
 gulp.task('default', ['sass', 'pug', 'server', 'watch']);
