@@ -7,39 +7,157 @@ block content
   .wrapper    
     .container-order
       .section-title Форма регистрации в секцию
-      form(action="server.php" method="post").order#order-form
-        .order__form            
+      //первый этап формы
+      //- form(action="server.php" method="post").order#order-form
+      //-   .order__form            
+      //-     .order__form-row
+      //-       label.order__form-block
+      //-         .order__form-label.lock Фамилия ребенка
+      //-         input(type="text" name="surname" placeholder="Ваш ответ" required).order__form-input
+      //-     .order__form-row
+      //-       label.order__form-block
+      //-         .order__form-label.lock Имя ребенка
+      //-         input(type="text" name="name" placeholder="Ваш ответ" required).order__form-input
+      //-     .order__form-row
+      //-       label.order__form-block
+      //-         .order__form-label.lock Отчество ребенка
+      //-         input(type="text" name="lastname" placeholder="Ваш ответ" required).order__form-input   
+      //-     .order__form-row
+      //-       label.order__form-block
+      //-         .order__form-label.lock Дата рождения
+      //-         .order__form-sublabel Введите дату рождения ребенка
+      //-         input(type="text" name="birthday" placeholder="Ваш ответ" required).order__form-input#datepick  
+      //-     .order__form-row
+      //-       label.order__form-block
+      //-         .order__form-label.lock Контактный телефон
+      //-         .order__form-sublabel Введите ваш номер телефона
+      //-         input(type="text" name="tel" placeholder="+7(___)___-____" required).order__form-input#phone
+      //-     .order__form-row
+      //-       label.order__form-block
+      //-         .order__form-label Статус ребенка
+      //-         select(name="group").order__form-input
+      //-           option(value="none") Выбрать...
+      //-           option(value="upperschool") Дошкольник (5-6 лет)
+      //-           option(value="school") Школьник (7-17 лет)     
+      //-     .order__form-row
+      //-       .order__order-row_btn
+      //-         input(type="submit" value="Далее").order__form-button    
+      //вторая часть формы
+      form(action="server2.php" method="post").order#order-form
+        .order__form    
+          //если выбрана школа        
           .order__form-row
             label.order__form-block
-              .order__form-label.lock Фамилия ребенка
-              input(type="text" name="surname" placeholder="Ваш ответ" required).order__form-input
+              .order__form-label.lock Номер школы
+              input(type="text" name="school_num" placeholder="Ваш ответ" required).order__form-input
           .order__form-row
             label.order__form-block
-              .order__form-label.lock Имя ребенка
-              input(type="text" name="name" placeholder="Ваш ответ" required).order__form-input
+              .order__form-label.lock Класс
+              .order__form-sublabel Без буквы
+              input(type="number" name="class" placeholder="Ваш ответ" required min="1" value="1").order__form-input
+          // --------------------------------------
+          //если дошкольник
           .order__form-row
             label.order__form-block
-              .order__form-label.lock Отчество ребенка
-              input(type="text" name="lastname" placeholder="Ваш ответ" required).order__form-input   
+              .order__form-label.lock Номер детского сада
+              input(type="text" name="kindergarten" placeholder="Ваш ответ" required).order__form-input
           .order__form-row
             label.order__form-block
-              .order__form-label.lock Дата рождения
-              .order__form-sublabel Введите дату рождения ребенка
-              input(type="text" name="birthday" placeholder="Ваш ответ" required).order__form-input#datepick  
-          .order__form-row
-            label.order__form-block
-              .order__form-label.lock Контактный телефон
-              .order__form-sublabel Введите ваш номер телефона
-              input(type="text" name="tel" placeholder="+7(___)___-____" required).order__form-input#phone
-          .order__form-row
-            label.order__form-block
-              .order__form-label Статус ребенка
+              .order__form-label Группа
               select(name="group").order__form-input
-                option(value="none") Выбрать...
-                option(value="upperschool") Дошкольник (5-6 лет)
-                option(value="school") Школьник (7-17 лет)     
+                option(value="0") Выбрать...
+                option(value="1") Подготовительная группa
+                option(value="2") Старшая группа   
+          // -----------------------------------
+          .order__form-row
+            label.order__form-block
+              .order__form-label.lock Занимались ли Вы ранее робототехникой?
+              select(name="isLesson" required).order__form-input
+                option(value="") Выбрать...
+                option(value="1") Да, занимаемся в Лиге Роботов
+                option(value="2") Да, в другой секции, но хотим к Вам :)
+                option(value="3") Нет
+          .order__form-row
+            label.order__form-block
+              .order__form-label.lock Наиболее удобный филиал для посещения секции
+              select(name="isFilial" required).order__form-input
+                option(value="") Выбрать...
+                option(value="1") 1
+                option(value="2") 2
+                option(value="3") 3
+          .order__form-row
+            label.order__form-block
+              .order__form-label.lock Наиболее удобное время для занятий
+              .order__form-sublabel Выберите как можно больше вариантов подходящего Вам времени. Группы составляются по пожеланиям большинства учеников. 
+              .order__form-input      
+                label                     
+                  input(type="checkbox" name="isTime" value="09:00") 
+                  |09:00
+                label                     
+                  input(type="checkbox" name="isTime" value="12:00") 
+                  |12:00
+                label                     
+                  input(type="checkbox" name="isTime" value="16:00") 
+                  |16:00 
+                label                     
+                  input(type="checkbox" name="isTime" value="09:00") 
+                  |09:00
+                label                     
+                  input(type="checkbox" name="isTime" value="12:00") 
+                  |12:00
+                label                     
+                  input(type="checkbox" name="isTime" value="09:00") 
+                  |16:00                  
+          .order__form-row
+            label.order__form-block
+              .order__form-label Дополнительный филиал
+              .order__form-sublabel Выберите дополнительный филиал, в котором вы сможете посещать секцию
+              .order__form-input.checkbox      
+                label                     
+                  input(type="checkbox" name="isAdd" value="1") 
+                  |Ленинский
+                label                     
+                  input(type="checkbox" name="isAdd" value="2") 
+                  |Курчатовский
+                label                     
+                  input(type="checkbox" name="isAdd" value="3") 
+                  |Заводской  
+          .order__form-row
+            label.order__form-block
+              .order__form-label.lock Контактный e-mail
+              input(type="email" name="email" placeholder="Ваш ответ" required).order__form-input    
+          .order__form-row
+            label.order__form-block
+              .order__form-label.lock ФИО контактного лица
+              input(type="text" name="fio" placeholder="Ваш ответ" required).order__form-input
+          .order__form-row
+            label.order__form-block
+              .order__form-label Комментарий
+              .order__form-sublabel Время и дни, в которые не сможете заниматься. Наличие сертификатов, опыт в робототехнике, любая другая информация, которую считаете нужным указать
+              textarea(name="comment" placeholder="Ваш ответ").order__form-input
+          .order__form-row
+            label.order__form-block
+              .order__form-label Откуда Вы узнали о нас?
+              .order__form-sublabel Выберите дополнительный филиал, в котором вы сможете посещать секцию
+              .order__form-input.checkbox      
+                label                     
+                  input(type="radio" name="isYour" value="1" checked) 
+                  |vk
+                label                     
+                  input(type="radio" name="isYour" value="2") 
+                  |facebook
+                label                     
+                  input(type="radio" name="isYour" value="3") 
+                  |yandex 
+          .order__form-row
+            label.order__form-block              
+              .order__form-input.checkbox      
+                label                     
+                  input(type="checkbox" name="isTrue" value="1" required) 
+                  span.lock Согласен/-на на обработку и хранение персональных данных.
           .order__form-row
             .order__order-row_btn
               input(type="submit" value="Далее").order__form-button    
+
 
               
