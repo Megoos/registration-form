@@ -56,9 +56,14 @@
   }
 
   &.checkbox {
+    padding-bottom: 5px;
     label {
       display: block;
     }
+  }
+
+  &.end {
+    box-shadow: 0px 0px 0px 0px inset;
   }
 }
 
