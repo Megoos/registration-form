@@ -6,10 +6,31 @@
   align-items: center;
   justify-content: center;
   margin: 40px 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
+}
+
+.order {
+  position: relative;
+}
+
+.description {
+  left: 335px;
+  top: 100px;
+  position: absolute;
+  width: 260px;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.description__item {
+  font-size: 14px;
+  color: #494949;
+  margin-bottom: 10px;
 }
 
 .order__form {
@@ -23,7 +44,7 @@
 
 .lock {
   &:after {
-    content: "*";
+    content: '*';
     color: red;
   }
 }
@@ -72,7 +93,7 @@
 }
 
 textarea.order__form-input {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
 }
 
