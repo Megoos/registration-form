@@ -14,168 +14,84 @@
       <div class="container-order">
         <div class="section-title">Форма регистрации в секцию</div>
         <!--первый этап формы-->
-        <!--вторая часть формы-->
-        <form class="order" action="server2.php" method="post" id="order-form">
-          <div class="description">
-            <div class="description__item">- конструировать на основе Lego WeDo 2.0, Lego Mindstorms EV3</div>
-            <div class="description__item">- применять на практике математику, физику и другие науки</div>
-            <div class="description__item">- программировать</div>
-            <div class="description__item">- основам логики и алгоритмики</div>
-            <div class="description__item">- проектному мышлению и командной работе</div>
-            <div class="description__item">- техническому творчеству</div>
+        <form class="order" action="server.php" method="post" id="order-form">
+          <div class="addition">
+            <div class="addition__item">
+              <div class="addition__text">Для правильного выбора уровня обучения</div>
+              <div class="widget-shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="76px" height="24px">
+                  <path d="M0 12.5 L76 12.5" style="fill:none; stroke:rgb(247,74,146);stroke-width:1;"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="addition__item">
+              <div class="addition__text">Позвоним и предложим доступное время и день занятий</div>
+              <div class="widget-shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="76px" height="24px">
+                  <path d="M0 12.5 L76 12.5" style="fill:none; stroke:rgb(247,74,146);stroke-width:1;"></path>
+                </svg>
+              </div>
+            </div>
           </div>
-          <div class="order__form">   
-            <!--если выбрана школа        -->
+          <div class="description">
+            <div class="description__item">- 16 уникальных курсов, 192 урока на 576 часов</div>
+            <div class="description__item">- Занятие для Дошкольников – 2 часа</div>
+            <div class="description__item">- Занятие для Школьников – 3 часа</div>
+            <div class="description__item">- Группа не более 12 ребят. Каждому уделим внимание</div>
+            <div class="description__item">- На каждом занятии НОВЫЙ робот!</div>
+            <div class="description__item">- Каждое занятие включает теоретическую часть, сборку и управление роботом</div>
+          </div>
+          <div class="order__form">           
             <div class="order__form-row">
               <label class="order__form-block">
-                <div class="order__form-label lock">Номер школы</div>
-                <input class="order__form-input" type="text" name="school_num" placeholder="Ваш ответ" required="required"/>
+                <div class="order__form-label lock">Фамилия ребенка</div>
+                <input class="order__form-input" type="text" name="surname" placeholder="Ваш ответ" required="required"/>
               </label>
             </div>
             <div class="order__form-row">
               <label class="order__form-block">
-                <div class="order__form-label lock">Класс</div>
-                <div class="order__form-sublabel">Без буквы</div>
-                <input class="order__form-input" type="number" name="class" placeholder="Ваш ответ" required="required" min="1" value="1"/>
-              </label>
-            </div>
-            <!-- ---------------------------------------->
-            <!--если дошкольник-->
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label lock">Номер детского сада</div>
-                <input class="order__form-input" type="text" name="kindergarten" placeholder="Ваш ответ" required="required"/>
+                <div class="order__form-label lock">Имя ребенка</div>
+                <input class="order__form-input" type="text" name="name" placeholder="Ваш ответ" required="required"/>
               </label>
             </div>
             <div class="order__form-row">
               <label class="order__form-block">
-                <div class="order__form-label">Группа</div>
+                <div class="order__form-label lock">Отчество ребенка</div>
+                <input class="order__form-input" type="text" name="lastname" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Дата рождения</div>
+                <div class="order__form-sublabel">Введите дату рождения ребенка</div>
+                <input class="order__form-input" type="text" name="birthday" placeholder="Ваш ответ" required="required" id="datepick"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Контактный телефон</div>
+                <div class="order__form-sublabel">Введите ваш номер телефона</div>
+                <input class="order__form-input" type="text" name="tel" placeholder="+7(___)___-____" required="required" id="phone"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label">Статус ребенка</div>
                 <select class="order__form-input" name="group">
-                  <option value="0">Выбрать...</option>
-                  <option value="1">Подготовительная группa</option>
-                  <option value="2">Старшая группа   </option>
+                  <option value="none">Выбрать...</option>
+                  <option value="upperschool">Дошкольник (5-6 лет)</option>
+                  <option value="school">Школьник (7-17 лет)     </option>
                 </select>
-              </label>
-            </div>
-            <!-- ------------------------------------->
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label lock">Занимались ли Вы ранее робототехникой?</div>
-                <select class="order__form-input" name="isLesson" required="required">
-                  <option value="">Выбрать...</option>
-                  <option value="1">Да, занимаемся в Лиге Роботов</option>
-                  <option value="2">Да, в другой секции, но хотим к Вам :)</option>
-                  <option value="3">Нет</option>
-                </select>
-              </label>
-            </div>
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label lock">Наиболее удобный филиал для посещения секции</div>
-                <select class="order__form-input" name="isFilial" required="required">
-                  <option value="">Выбрать...</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              </label>
-            </div>
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label lock">Наиболее удобное время для занятий</div>
-                <div class="order__form-sublabel">Выберите как можно больше вариантов подходящего Вам времени. Группы составляются по пожеланиям большинства учеников. </div>
-                <div class="order__form-input">     
-                  <label>                    
-                    <input type="checkbox" name="isTime" value="09:00"/>09:00
-                  </label>
-                  <label>                    
-                    <input type="checkbox" name="isTime" value="12:00"/>12:00
-                  </label>
-                  <label>                    
-                    <input type="checkbox" name="isTime" value="16:00"/>16:00 
-                  </label>
-                  <label>                    
-                    <input type="checkbox" name="isTime" value="09:00"/>09:00
-                  </label>
-                  <label>                    
-                    <input type="checkbox" name="isTime" value="12:00"/>12:00
-                  </label>
-                  <label>                    
-                    <input type="checkbox" name="isTime" value="09:00"/>16:00                  
-                  </label>
-                </div>
-              </label>
-            </div>
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label">Дополнительный филиал</div>
-                <div class="order__form-sublabel">Выберите дополнительный филиал, в котором вы сможете посещать секцию</div>
-                <div class="order__form-input checkbox">     
-                  <label>                    
-                    <input type="checkbox" name="isAdd" value="1"/>Ленинский
-                  </label>
-                  <label>                    
-                    <input type="checkbox" name="isAdd" value="2"/>Курчатовский
-                  </label>
-                  <label>                    
-                    <input type="checkbox" name="isAdd" value="3"/>Заводской  
-                  </label>
-                </div>
-              </label>
-            </div>
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label lock">Контактный e-mail</div>
-                <input class="order__form-input" type="email" name="email" placeholder="Ваш ответ" required="required"/>
-              </label>
-            </div>
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label lock">ФИО контактного лица</div>
-                <input class="order__form-input" type="text" name="fio" placeholder="Ваш ответ" required="required"/>
-              </label>
-            </div>
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label">Комментарий</div>
-                <div class="order__form-sublabel">Время и дни, в которые не сможете заниматься. Наличие сертификатов, опыт в робототехнике, любая другая информация, которую считаете нужным указать</div>
-                <textarea class="order__form-input" name="comment" placeholder="Ваш ответ"></textarea>
-              </label>
-            </div>
-            <div class="order__form-row">
-              <label class="order__form-block">
-                <div class="order__form-label">Откуда Вы узнали о нас?</div>
-                <div class="order__form-sublabel">Выберите дополнительный филиал, в котором вы сможете посещать секцию</div>
-                <div class="order__form-input checkbox">     
-                  <label>                    
-                    <input type="radio" name="isYour" value="1" checked="checked"/>vk
-                  </label>
-                  <label>                    
-                    <input type="radio" name="isYour" value="2"/>facebook
-                  </label>
-                  <label>                    
-                    <input type="radio" name="isYour" value="3"/>yandex 
-                  </label>
-                </div>
-              </label>
-            </div>
-            <div class="order__form-row">
-              <label class="order__form-block">             
-                <div class="order__form-input end">   
-                  <label>                    
-                    <input type="checkbox" name="isTrue" value="1" required="required"/><span class="lock">Согласен/-на на обработку и хранение персональных данных.</span>
-                  </label>
-                </div>
               </label>
             </div>
             <div class="order__form-row">
               <div class="order__order-row_btn">
-                <input class="order__form-button submit" type="submit" value="Отправить"/>
-                <input class="order__form-button" type="button" value="Назад"/>
+                <input class="order__form-button" type="submit" value="Далее"/>
               </div>
             </div>
           </div>
         </form>
+        <!--вторая часть формы-->
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

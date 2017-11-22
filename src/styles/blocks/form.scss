@@ -33,6 +33,29 @@
   margin-bottom: 10px;
 }
 
+.addition {
+  left: -315px;
+  top: 265px;
+  position: absolute;
+  // width: 260px;
+}
+
+.addition__item {
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.addition__text {
+  font-size: 14px;
+  color: #494949;
+  display: inline-block;
+  width: 240px;
+}
+
+.widget-shape {
+  display: inline-block;
+}
+
 .order__form {
   width: 300px;
 }
