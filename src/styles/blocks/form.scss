@@ -17,7 +17,7 @@
 }
 
 .description {
-  left: 335px;
+  left: 435px;
   top: 100px;
   position: absolute;
   width: 260px;
@@ -35,13 +35,15 @@
 
 .addition {
   left: -315px;
-  top: 265px;
+  top: 285px;
   position: absolute;
-  // width: 260px;
+  @include tablets {
+    display: none;
+  }
 }
 
 .addition__item {
-  margin-bottom: 50px;
+  margin-bottom: 55px;
   display: flex;
 }
 
@@ -57,11 +59,15 @@
 }
 
 .order__form {
-  width: 300px;
+  width: 400px;
+}
+
+.order__form-row {
+  margin-bottom: 10px;
 }
 
 .order__form-label {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 135%;
 }
 
@@ -109,6 +115,11 @@
   &.end {
     box-shadow: 0px 0px 0px 0px inset;
   }
+
+  &.select {
+    padding-left: 0px;
+    box-shadow: rgb(38, 165, 165) 0px 0px 0px 0px inset;
+  }
 }
 
 #phone {
@@ -122,4 +133,8 @@ textarea.order__form-input {
 
 input:focus {
   outline: 0;
+}
+
+label input {
+  margin-right: 7px;
 }

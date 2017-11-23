@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1"/>
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/datepicker.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.1/dist/jquery.formstyler.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.1/dist/jquery.formstyler.theme.css"/>
     <title> Форма
     </title>
   </head>
@@ -77,7 +79,7 @@
             <div class="order__form-row">
               <label class="order__form-block">
                 <div class="order__form-label">Статус ребенка</div>
-                <select class="order__form-input" name="group">
+                <select class="order__form-input select" name="group">
                   <option value="none">Выбрать...</option>
                   <option value="upperschool">Дошкольник (5-6 лет)</option>
                   <option value="school">Школьник (7-17 лет)     </option>
@@ -92,134 +94,172 @@
           </div>
         </form>
         <!--вторая часть формы-->
-        <!-- form(action="server2.php" method="post").order#order-form-->
-        <!--   .description-->
-        <!--     .description__item - конструировать на основе Lego WeDo 2.0, Lego Mindstorms EV3-->
-        <!--     .description__item - применять на практике математику, физику и другие науки-->
-        <!--     .description__item - программировать-->
-        <!--     .description__item - основам логики и алгоритмики-->
-        <!--     .description__item - проектному мышлению и командной работе-->
-        <!--     .description__item - техническому творчеству-->
-        <!--   .order__form    -->
-        <!--     //если выбрана школа        -->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label.lock Номер школы-->
-        <!--         input(type="text" name="school_num" placeholder="Ваш ответ" required).order__form-input-->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label.lock Класс-->
-        <!--         .order__form-sublabel Без буквы-->
-        <!--         input(type="number" name="class" placeholder="Ваш ответ" required min="1" value="1").order__form-input-->
-        <!--     // ---------------------------------------->
-        <!--     //если дошкольник-->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label.lock Номер детского сада-->
-        <!--         input(type="text" name="kindergarten" placeholder="Ваш ответ" required).order__form-input-->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label Группа-->
-        <!--         select(name="group").order__form-input-->
-        <!--           option(value="0") Выбрать...-->
-        <!--           option(value="1") Подготовительная группa-->
-        <!--           option(value="2") Старшая группа   -->
-        <!--     // ------------------------------------->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label.lock Занимались ли Вы ранее робототехникой?-->
-        <!--         select(name="isLesson" required).order__form-input-->
-        <!--           option(value="") Выбрать...-->
-        <!--           option(value="1") Да, занимаемся в Лиге Роботов-->
-        <!--           option(value="2") Да, в другой секции, но хотим к Вам :)-->
-        <!--           option(value="3") Нет-->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label.lock Наиболее удобный филиал для посещения секции-->
-        <!--         select(name="isFilial" required).order__form-input-->
-        <!--           option(value="") Выбрать...-->
-        <!--           option(value="1") 1-->
-        <!--           option(value="2") 2-->
-        <!--           option(value="3") 3-->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label.lock Наиболее удобное время для занятий-->
-        <!--         .order__form-sublabel Выберите как можно больше вариантов подходящего Вам времени. Группы составляются по пожеланиям большинства учеников. -->
-        <!--         .order__form-input      -->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isTime" value="09:00") -->
-        <!--             |09:00-->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isTime" value="12:00") -->
-        <!--             |12:00-->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isTime" value="16:00") -->
-        <!--             |16:00 -->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isTime" value="09:00") -->
-        <!--             |09:00-->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isTime" value="12:00") -->
-        <!--             |12:00-->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isTime" value="09:00") -->
-        <!--             |16:00                  -->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label Дополнительный филиал-->
-        <!--         .order__form-sublabel Выберите дополнительный филиал, в котором вы сможете посещать секцию-->
-        <!--         .order__form-input.checkbox      -->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isAdd" value="1") -->
-        <!--             |Ленинский-->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isAdd" value="2") -->
-        <!--             |Курчатовский-->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isAdd" value="3") -->
-        <!--             |Заводской  -->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label.lock Контактный e-mail-->
-        <!--         input(type="email" name="email" placeholder="Ваш ответ" required).order__form-input    -->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label.lock ФИО контактного лица-->
-        <!--         input(type="text" name="fio" placeholder="Ваш ответ" required).order__form-input-->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label Комментарий-->
-        <!--         .order__form-sublabel Время и дни, в которые не сможете заниматься. Наличие сертификатов, опыт в робототехнике, любая другая информация, которую считаете нужным указать-->
-        <!--         textarea(name="comment" placeholder="Ваш ответ").order__form-input-->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block-->
-        <!--         .order__form-label Откуда Вы узнали о нас?-->
-        <!--         .order__form-sublabel Выберите дополнительный филиал, в котором вы сможете посещать секцию-->
-        <!--         .order__form-input.checkbox      -->
-        <!--           label                     -->
-        <!--             input(type="radio" name="isYour" value="1" checked) -->
-        <!--             |vk-->
-        <!--           label                     -->
-        <!--             input(type="radio" name="isYour" value="2") -->
-        <!--             |facebook-->
-        <!--           label                     -->
-        <!--             input(type="radio" name="isYour" value="3") -->
-        <!--             |yandex -->
-        <!--     .order__form-row-->
-        <!--       label.order__form-block              -->
-        <!--         .order__form-input.end    -->
-        <!--           label                     -->
-        <!--             input(type="checkbox" name="isTrue" value="1" required) -->
-        <!--             span.lock Согласен/-на на обработку и хранение персональных данных.-->
-        <!--     .order__form-row-->
-        <!--       .order__order-row_btn-->
-        <!--         input(type="submit" value="Отправить").order__form-button.submit  -->
-        <!--         input(type="button" value="Назад").order__form-button
-        -->
+        <form class="order" action="server2.php" method="post" id="order-form">
+          <div class="description">
+            <div class="description__item">- конструировать на основе Lego WeDo 2.0, Lego Mindstorms EV3</div>
+            <div class="description__item">- применять на практике математику, физику и другие науки</div>
+            <div class="description__item">- программировать</div>
+            <div class="description__item">- основам логики и алгоритмики</div>
+            <div class="description__item">- проектному мышлению и командной работе</div>
+            <div class="description__item">- техническому творчеству</div>
+          </div>
+          <div class="order__form">   
+            <!--если выбрана школа        -->
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Номер школы</div>
+                <input class="order__form-input" type="text" name="school_num" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Класс</div>
+                <div class="order__form-sublabel">Без буквы</div>
+                <input class="order__form-input" type="number" name="class" placeholder="Ваш ответ" required="required" min="1" value="1"/>
+              </label>
+            </div>
+            <!-- ---------------------------------------->
+            <!--если дошкольник-->
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Номер детского сада</div>
+                <input class="order__form-input" type="text" name="kindergarten" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label">Группа</div>
+                <select class="order__form-input select" name="group" data-smart-positioning="false">
+                  <option value="0">Выбрать...</option>
+                  <option value="1">Подготовительная группa</option>
+                  <option value="2">Старшая группа   </option>
+                </select>
+              </label>
+            </div>
+            <!-- ------------------------------------->
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Занимались ли Вы ранее робототехникой?</div>
+                <select class="order__form-input select" name="isLesson" required="required">
+                  <option value="">Выбрать...</option>
+                  <option value="1">Да, занимаемся в Лиге Роботов</option>
+                  <option value="2">Да, в другой секции, но хотим к Вам :)</option>
+                  <option value="3">Нет</option>
+                </select>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Наиболее удобный филиал для посещения секции</div>
+                <select class="order__form-input select" name="isFilial" required="required">
+                  <option value="">Выбрать...</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Наиболее удобное время для занятий</div>
+                <div class="order__form-sublabel">Выберите как можно больше вариантов подходящего Вам времени. Группы составляются по пожеланиям большинства учеников. </div>
+                <div class="order__form-input">     
+                  <label>                    
+                    <input type="checkbox" name="isTime" value="09:00"/>09:00
+                  </label>
+                  <label>                    
+                    <input type="checkbox" name="isTime" value="12:00"/>12:00
+                  </label>
+                  <label>                    
+                    <input type="checkbox" name="isTime" value="16:00"/>16:00 
+                  </label>
+                  <label>                    
+                    <input type="checkbox" name="isTime" value="09:00"/>09:00
+                  </label>
+                  <label>                    
+                    <input type="checkbox" name="isTime" value="12:00"/>12:00
+                  </label>
+                  <label>                    
+                    <input type="checkbox" name="isTime" value="09:00"/>16:00                  
+                  </label>
+                </div>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label">Дополнительный филиал</div>
+                <div class="order__form-sublabel">Выберите дополнительный филиал, в котором вы сможете посещать секцию</div>
+                <div class="order__form-input checkbox">     
+                  <label>                    
+                    <input type="checkbox" name="isAdd" value="1"/>Ленинский
+                  </label>
+                  <label>                    
+                    <input type="checkbox" name="isAdd" value="2"/>Курчатовский
+                  </label>
+                  <label>                    
+                    <input type="checkbox" name="isAdd" value="3"/>Заводской  
+                  </label>
+                </div>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">Контактный e-mail</div>
+                <input class="order__form-input" type="email" name="email" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label lock">ФИО контактного лица</div>
+                <input class="order__form-input" type="text" name="fio" placeholder="Ваш ответ" required="required"/>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label">Комментарий</div>
+                <div class="order__form-sublabel">Время и дни, в которые не сможете заниматься. Наличие сертификатов, опыт в робототехнике, любая другая информация, которую считаете нужным указать</div>
+                <textarea class="order__form-input" name="comment" placeholder="Ваш ответ"></textarea>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">
+                <div class="order__form-label">Откуда Вы узнали о нас?</div>
+                <div class="order__form-sublabel">Выберите дополнительный филиал, в котором вы сможете посещать секцию</div>
+                <div class="order__form-input checkbox">     
+                  <label>                    
+                    <input type="radio" name="isYour" value="1" checked="checked"/>vk
+                  </label>
+                  <label>                    
+                    <input type="radio" name="isYour" value="2"/>facebook
+                  </label>
+                  <label>                    
+                    <input type="radio" name="isYour" value="3"/>yandex 
+                  </label>
+                </div>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <label class="order__form-block">             
+                <div class="order__form-input end">   
+                  <label>                    
+                    <input type="checkbox" name="isTrue" value="1" required="required"/><span class="lock">Согласен/-на на обработку и хранение персональных данных.</span>
+                  </label>
+                </div>
+              </label>
+            </div>
+            <div class="order__form-row">
+              <div class="order__order-row_btn">
+                <input class="order__form-button submit" type="submit" value="Отправить"/>
+                <input class="order__form-button" type="button" value="Назад"/>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.1/dist/jquery.formstyler.min.js"></script>
     <script src="js/datepicker.min.js"> </script>
     <script src="js/main.js"></script>
   </body>
