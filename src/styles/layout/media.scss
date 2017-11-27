@@ -10,6 +10,11 @@
   }
 }
 
+@mixin iphones {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
 
 // @include phones {
 //   padding-bottom: 0px;

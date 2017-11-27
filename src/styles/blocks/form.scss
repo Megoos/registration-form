@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 40px 0;
+  //padding: 40px 0;
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.42;
@@ -14,6 +14,8 @@
 
 .order {
   position: relative;
+  width: 90%;
+  max-width: 400px;
 }
 
 .description {
@@ -59,7 +61,7 @@
 }
 
 .order__form {
-  width: 400px;
+  width: 100%;
 }
 
 .order__form-row {
@@ -93,11 +95,13 @@
   margin-bottom: 10px;
   width: 100%;
   border: 0;
-  box-shadow: rgb(38, 165, 165) 0px -2px 0px 0px inset;
+  border-bottom: 2px solid rgb(38, 165, 165);
+  //box-shadow: rgb(38, 165, 165) 0px -2px 0px 0px inset;
 
   &:focus {
     outline: 0px;
-    box-shadow: rgb(61, 179, 37) 0px -2px 0px 0px inset;
+    border-bottom: 2px solid rgb(61, 179, 37);
+    //box-shadow: rgb(61, 179, 37) 0px -2px 0px 0px inset;
   }
 
   label {
@@ -113,12 +117,13 @@
   }
 
   &.end {
-    box-shadow: 0px 0px 0px 0px inset;
+    //box-shadow: 0px 0px 0px 0px inset;
+    border-bottom: 0px;
   }
 
   &.select {
     padding-left: 0px;
-    box-shadow: rgb(38, 165, 165) 0px 0px 0px 0px inset;
+    border-bottom: 0px;
   }
 }
 
