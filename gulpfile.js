@@ -40,7 +40,7 @@ gulp.task('sass', () => {
       //   type     :    'px-to-rem',
       //   rootSize  :    16
       // }))
-      .pipe(csso())
+      //.pipe(csso())
       .pipe(sourcemaps.write())
       .pipe(gulp.dest('./dist/css/'))
       .pipe(reload({ stream: true }))

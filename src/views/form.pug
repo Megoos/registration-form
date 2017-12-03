@@ -9,24 +9,12 @@ block content
       .section-title Форма регистрации в секцию
       //первый этап формы
       form(action="server.php" method="post").order#order-form
-        .addition
-          .addition__item
-            .addition__text Для правильного выбора уровня обучения
-            .widget-shape
-              svg(xmlns="http://www.w3.org/2000/svg" version="1.1" width="76px" height="24px")
-                path(d="M0 12.5 L76 12.5" style="fill:none; stroke:rgb(247,74,146);stroke-width:1")
-          .addition__item
-            .addition__text Позвоним и предложим доступное время и день занятий
-            .widget-shape
-              svg(xmlns="http://www.w3.org/2000/svg" version="1.1" width="76px" height="24px")
-                path(d="M0 12.5 L76 12.5" style="fill:none; stroke:rgb(247,74,146);stroke-width:1")
+        
         .description
-          .description__item - 16 уникальных курсов, 192 урока на 576 часов
-          .description__item - Занятие для Дошкольников – 2 часа
-          .description__item - Занятие для Школьников – 3 часа
-          .description__item - Группа не более 12 ребят. Каждому уделим внимание
-          .description__item - На каждом занятии НОВЫЙ робот!
-          .description__item - Каждое занятие включает теоретическую часть, сборку и управление роботом
+          .description__img.img_1-1
+          .description__item Специалистами Лиги Роботов разработано 16 уникальных курсов, 192 урока на 576 часов.
+          .description__img.img_1-2
+          .description__item У нас всегда есть что-то интересное и новенькое для ребят от 5 до 17 лет с любым уровнем знаний робототехники.
         .order__form            
           .order__form-row
             label.order__form-block
@@ -63,12 +51,14 @@ block content
       //вторая часть формы
       form(action="server2.php" method="post").order#order-form
         .description
-          .description__item - конструировать на основе Lego WeDo 2.0, Lego Mindstorms EV3
-          .description__item - применять на практике математику, физику и другие науки
-          .description__item - программировать
-          .description__item - основам логики и алгоритмики
-          .description__item - проектному мышлению и командной работе
-          .description__item - техническому творчеству
+          .description__img.img_2-1
+          .description__item STEM-мультдисциплинарный подход к образованию: через робототехнику учим математике, физике, химии, проектной деятельности, работе в команде и даже истории и биологии.
+          .description__img.img_2-2
+          .description__item Цель Лиги Роботов — возродить интерес у детей к профессии инженера, техническому творчеству.
+          .description__img.img_2-3
+          .description__item Специальный трёхчасовой формат. На каждом занятии — НОВЫЙ РОБОТ.
+          .description__img.img_2-4
+          .description__item «Живые», постоянно улучшающиеся методики.
         .order__form    
           //если выбрана школа        
           .order__form-row
